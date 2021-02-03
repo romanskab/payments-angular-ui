@@ -1,1 +1,12 @@
-<p>client works!</p>
+<div class="header" *ngIf="user">
+  <div class="header-left">{{user.surname}} {{user.name}}</div>
+  <div class="header-right">{{user.email}}</div>
+</div>
+
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle checked value="" (click)="toAccounts()">My accounts</mat-button-toggle>
+  <mat-button-toggle value="" (click)="toPayments()">My payments</mat-button-toggle>
+  <mat-button-toggle value="" (click)="exit()">Exit</mat-button-toggle>
+</mat-button-toggle-group>
+
+<router-outlet></router-outlet>
